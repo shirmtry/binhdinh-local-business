@@ -1,0 +1,61 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <h1>Chợ đêm &amp; Đặc sản Quy Nhơn</h1>
+  <p class="tagline">Tìm quán <strong>ngon – rẻ – chính gốc</strong> như người địa phương</p>
+  <p class="updated"><%= updated %></p>
+</section>
+
+<section class="card problem">
+  <h2>Vấn đề của du khách</h2>
+  <p>
+    Du khách đến Quy Nhơn thường không biết quán nào ngon – rẻ – chính gốc, dễ vào nhầm quán
+    "chặt chém" hoặc bỏ lỡ đặc sản thật sự của đất Võ như bánh xèo tôm nhảy, nem chợ Huyện, rượu Bầu Đá.
+    Thông tin trên mạng rời rạc, nhiều đánh giá ảo, giá cả không minh bạch.
+    Tháng 11/2026, Bình Định đang cao điểm mùa mưa lũ – bão miền Trung: lũ sông Kôn dâng cao, bão số 9 và 10
+    đổ bộ Quy Nhơn – Phù Cát gây mất điện, ngập úng, nhiều quán phải nghỉ hoặc đổi giờ mở cửa.
+    Trang này gom một chỗ 40 quán đặc sản và thông tin chợ đêm Quy Nhơn để du khách tra cứu nhanh,
+    đồng thời lưu ý kiểm tra giờ mở cửa khi thời tiết xấu.
+  </p>
+</section>
+
+<section class="stats">
+  <div class="stat"><strong><%= total %></strong><span>Quán đặc sản</span></div>
+  <div class="stat"><strong><%= mons.length %></strong><span>Món Bình Định</span></div>
+  <div class="stat"><strong>1</strong><span>Chợ đêm Nguyễn Thái Học</span></div>
+</section>
+
+<section>
+  <h2>Khám phá theo món</h2>
+  <div class="chips">
+    <% mons.forEach(function(m){ %>
+      <a class="chip" href="/danh-sach?mon=<%= encodeURIComponent(m) %>"><%= m %></a>
+    <% }) %>
+  </div>
+</section>
+
+<section>
+  <h2>Quán nổi bật <small>(đánh giá cao — mô phỏng)</small></h2>
+  <p class="mock-note"><%= mockLabel %></p>
+  <div class="grid">
+    <% noiBat.forEach(function(qq){ %>
+      <article class="card shop">
+        <span class="badge"><%= qq.mon %></span>
+        <h3><a href="/quan/<%= qq.id %>"><%= qq.ten %></a></h3>
+        <p class="addr">📍 <%= qq.diaChi %></p>
+        <p class="price">💰 <%= qq.giaTu %>–<%= qq.giaDen %>k đ</p>
+        <p class="stars">⭐ <%= qq.sao.toFixed(1) %> / 5 · <%= qq.luotDanhGia %> lượt đánh giá (mock)</p>
+        <p class="hours">🕒 <%= qq.gioMoCua %></p>
+      </article>
+    <% }) %>
+  </div>
+  <p class="center"><a class="btn" href="/danh-sach">Xem toàn bộ 40 quán →</a></p>
+</section>
+
+<section class="card market-teaser">
+  <h2>🏮 Chợ đêm Quy Nhơn — đường Nguyễn Thái Học</h2>
+  <p>Khu ẩm thực sầm uất nhất phố biển: bánh xèo, hải sản, gà nướng lu, mực ngào, chè… hoạt động từ chiều đến khuya.</p>
+  <a class="btn" href="/cho-dem">Khám phá chợ đêm →</a>
+</section>
+
+<%- include('partials/footer') %>

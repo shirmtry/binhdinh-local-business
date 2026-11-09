@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+
+<section class="hero hero-night">
+  <h1>🏮 Chợ đêm Quy Nhơn</h1>
+  <p class="tagline">Đường Nguyễn Thái Học — thiên đường ẩm thực về đêm của phố biển</p>
+  <p class="updated"><%= updated %></p>
+</section>
+
+<section class="card">
+  <h2>Thông tin chợ đêm</h2>
+  <ul class="detail-list">
+    <li>📍 Vị trí: đường <strong>Nguyễn Thái Học</strong>, trung tâm TP Quy Nhơn (gần Quảng trường Nguyễn Tất Thành và bờ biển Xuân Diệu).</li>
+    <li>🕒 Giờ hoạt động tham khảo: <strong>16:00 – 24:00</strong> hằng ngày, nhộn nhịp nhất 18:00 – 22:00.</li>
+    <li>🍢 Ẩm thực: bánh xèo tôm nhảy, bánh hỏi lòng heo, gà nướng lu, mực ngào, ốc – hải sản, nem nướng, chè và nước giải khát.</li>
+    <li>🛍️ Ngoài đồ ăn còn có quầy lưu niệm, đặc sản mang về: bánh ít lá gai, tré, nem chợ Huyện, rượu Bầu Đá, mực khô một nắng.</li>
+    <li>💰 Mức giá bình dân: phần lớn món 20.000 – 80.000 đ; nên hỏi giá trước khi gọi món.</li>
+  </ul>
+  <div class="alert">🌧️ Mùa mưa lũ – bão 2026: chợ đêm có thể nghỉ sớm hoặc đóng khi mưa lớn, ngập úng đường Nguyễn Thái Học; theo dõi thời tiết trước khi đi.</div>
+</section>
+
+<section class="card">
+  <h2>Mẹo đi chợ đêm cho du khách</h2>
+  <ol class="tips">
+    <li>Đi sớm (17:00–18:00) để chọn chỗ ngồi và tránh đông.</li>
+    <li>Hỏi giá trước, ưu tiên quầy đông khách địa phương.</li>
+    <li>Gửi xe ở các bãi giữ xe đầu đường, đi bộ vào khu ẩm thực.</li>
+    <li>Mang tiền mặt lẻ; một số quầy chưa nhận chuyển khoản.</li>
+    <li>Mùa mưa: mang áo mưa, giày chống trơn; tránh trú dưới mái bạt khi gió bão.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Các quầy trong danh bạ (khu chợ đêm)</h2>
+  <p class="mock-note"><%= mockLabel %></p>
+  <div class="grid">
+    <% gianHang.forEach(function(qq){ %>
+      <article class="card shop">
+        <span class="badge"><%= qq.mon %></span>
+        <h3><a href="/quan/<%= qq.id %>"><%= qq.ten %></a></h3>
+        <p class="addr">📍 <%= qq.diaChi %></p>
+        <p class="price">💰 <%= qq.giaTu %>–<%= qq.giaDen %>k đ · ⭐ <%= qq.sao.toFixed(1) %></p>
+        <p class="hours">🕒 <%= qq.gioMoCua %></p>
+      </article>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<h1>Giới thiệu dự án</h1>
+
+<section class="card">
+  <h2>Bối cảnh Bình Định — mùa mưa lũ 2026</h2>
+  <p>
+    Tháng 11/2026, Bình Định đang trong cao điểm mùa mưa lũ và bão miền Trung (tháng 10–12/2026):
+    lũ sông Kôn dâng cao ở Tuy Phước – An Nhơn, bão số 9 và 10 đổ bộ Quy Nhơn – Phù Cát – Hoài Nhơn,
+    sạt lở ở An Lão – Vĩnh Thạnh – Tây Sơn, ngập úng đô thị Quy Nhơn, xói lở bờ biển Nhơn Lý – Cát Tiến – Mỹ Thành,
+    nhiều nơi mất điện 3–7 ngày. Hoạt động chợ đêm và quán ăn vì thế có thể thay đổi giờ giấc đột ngột —
+    du khách nên kiểm tra trước khi đi.
+  </p>
+  <p>
+    Dự án <strong>Chợ đêm &amp; Đặc sản Quy Nhơn</strong> giúp du khách tìm quán ngon – rẻ – chính gốc:
+    danh bạ 40 quán theo 14 món đặc sản đất Võ (bánh xèo tôm nhảy, bánh ít lá gai, nem chợ Huyện,
+    bún chả cá, bánh hỏi lòng heo, tré, gà nướng lu, mực ngào, rượu Bầu Đá, cháo lòng…), bộ lọc theo món,
+    tìm kiếm, sắp xếp theo giá/đánh giá và trang thông tin chợ đêm Nguyễn Thái Học.
+  </p>
+  <p class="mock-note"><%= mockLabel %>. Tên quán, giá, đánh giá, giờ mở cửa đều là dữ liệu hư cấu; địa chỉ dùng tên đường thật tại Quy Nhơn với số nhà mô phỏng.</p>
+</section>
+
+<section class="card contact-block">
+  <h2>📞 Liên hệ HTK</h2>
+  <ul class="detail-list">
+    <li>Hotline / Zalo: <a href="tel:0396241674"><strong>0396241674</strong></a> · <a href="https://zalo.me/0396241674" target="_blank" rel="noopener">zalo.me/0396241674</a></li>
+    <li>Email: <a href="mailto:htk.contact@gmail.com">htk.contact@gmail.com</a></li>
+    <li>Tác giả: <a href="https://zalo.me/0396241674" target="_blank" rel="noopener">HTK</a></li>
+  </ul>
+  <p class="updated">Cập nhật: 09/11/2026</p>
+</section>
+
+<section class="card">
+  <h2>Công nghệ</h2>
+  <p>Node.js + Express + EJS (server-side rendering), CSS thuần responsive (375px – 1440px), deploy trên Vercel. Không cơ sở dữ liệu — toàn bộ dữ liệu là mock trong mã nguồn.</p>
+</section>
+
+<%- include('partials/footer') %>

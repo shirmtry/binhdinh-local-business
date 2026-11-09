@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+
+<nav class="breadcrumb"><a href="/danh-sach">← Danh sách quán</a></nav>
+
+<article class="card detail">
+  <span class="badge"><%= quan.mon %></span>
+  <h1><%= quan.ten %></h1>
+  <p class="mock-note"><%= mockLabel %> — quán hư cấu phục vụ minh họa.</p>
+  <p class="addr">📍 <%= quan.diaChi %> <em>(đường thật, số nhà mô phỏng)</em></p>
+  <p><%= quan.moTa %></p>
+  <ul class="detail-list">
+    <li>💰 Giá tham khảo: <strong><%= quan.giaTu %>–<%= quan.giaDen %>.000 đ / người</strong> (mock)</li>
+    <li>⭐ Đánh giá: <strong><%= quan.sao.toFixed(1) %> / 5</strong> · <%= quan.luotDanhGia %> lượt (mock)</li>
+    <li>🕒 Giờ mở cửa: <strong><%= quan.gioMoCua %></strong> (mock — mùa mưa lũ 2026 có thể thay đổi)</li>
+    <li>🗺️ Khu vực: <%= quan.khuVuc %></li>
+  </ul>
+  <div class="alert">🌧️ Mùa mưa lũ – bão miền Trung 2026: gọi xác nhận giờ mở cửa trước khi đến; nhiều tuyến đường Quy Nhơn ngập úng sau mưa lớn.</div>
+</article>
+
+<section class="card">
+  <h2>Đánh giá của thực khách (mô phỏng)</h2>
+  <% quan.danhGiaMock.forEach(function(r){ %>
+    <div class="review">
+      <p class="review-head"><strong><%= r.ten %></strong> <span class="stars"><%= '★'.repeat(r.sao) %><%= '☆'.repeat(5 - r.sao) %></span> <span class="mock-tag">mock</span></p>
+      <p><%= r.noiDung %></p>
+    </div>
+  <% }) %>
+</section>
+
+<% if (cungMon.length) { %>
+<section>
+  <h2>Quán cùng món <%= quan.mon %></h2>
+  <div class="grid">
+    <% cungMon.forEach(function(qq){ %>
+      <article class="card shop">
+        <h3><a href="/quan/<%= qq.id %>"><%= qq.ten %></a></h3>
+        <p class="addr">📍 <%= qq.diaChi %></p>
+        <p class="price">💰 <%= qq.giaTu %>–<%= qq.giaDen %>k đ · ⭐ <%= qq.sao.toFixed(1) %></p>
+      </article>
+    <% }) %>
+  </div>
+</section>
+<% } %>
+
+<%- include('partials/footer') %>

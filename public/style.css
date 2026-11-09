@@ -1,0 +1,220 @@
+/* Chợ đêm & Đặc sản Quy Nhơn — HTK 0396241674 — Cập nhật 09/11/2026 */
+:root {
+  --bg: #fdf8f0;
+  --card: #ffffff;
+  --ink: #2b2118;
+  --muted: #6f6154;
+  --brand: #b3541e;
+  --brand-dark: #8a3f14;
+  --accent: #0e7a6d;
+  --night: #232946;
+  --line: #eadfce;
+  --warn-bg: #fff4e0;
+  --warn-line: #e0a940;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+a { color: var(--brand-dark); }
+main { max-width: 1120px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 1.6rem; line-height: 1.3; }
+h2 { font-size: 1.25rem; color: var(--brand-dark); }
+small { color: var(--muted); font-weight: normal; }
+
+/* Navbar */
+.navbar {
+  background: var(--night);
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+}
+.brand { color: #ffd9a0; font-weight: 700; font-size: 1.05rem; text-decoration: none; margin-right: auto; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+.nav-links a { color: #e8e6f0; text-decoration: none; font-size: 0.95rem; }
+.nav-links a:hover { color: #ffd9a0; text-decoration: underline; }
+.btn-hotline {
+  background: var(--brand);
+  color: #fff !important;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.btn-hotline:hover { background: var(--brand-dark); text-decoration: none !important; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--brand) 0%, var(--night) 100%);
+  color: #fff;
+  border-radius: 14px;
+  padding: 28px 20px;
+  margin-bottom: 18px;
+  text-align: center;
+}
+.hero h1 { margin: 0 0 8px; color: #fff; }
+.hero .tagline { margin: 0; font-size: 1.05rem; }
+.hero-night { background: linear-gradient(135deg, #1a1f38 0%, #6b3fa0 100%); }
+.updated { color: var(--muted); font-size: 0.9rem; }
+.hero .updated { color: #ffe4bf; }
+
+/* Cards & grid */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(43, 33, 24, 0.06);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.shop h3 { margin: 8px 0 6px; font-size: 1.05rem; }
+.shop h3 a { text-decoration: none; }
+.shop h3 a:hover { text-decoration: underline; }
+.shop p { margin: 4px 0; font-size: 0.92rem; }
+.addr { color: var(--muted); }
+.price { color: var(--accent); font-weight: 600; }
+.stars { color: #b8860b; }
+.hours { color: var(--muted); }
+.badge {
+  display: inline-block;
+  background: #fbe9d7;
+  color: var(--brand-dark);
+  border-radius: 12px;
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin: 2px 4px 2px 0;
+}
+.badge-night { background: #e6e2f5; color: var(--night); }
+.review-mini {
+  margin: 8px 0;
+  padding: 8px 10px;
+  border-left: 3px solid var(--line);
+  background: #fbf6ec;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  padding: 9px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover { background: var(--brand-dark); }
+.btn-ghost { background: transparent; color: var(--brand-dark); border: 1px solid var(--brand); }
+.btn-small { padding: 6px 12px; font-size: 0.85rem; }
+.center { text-align: center; }
+
+/* Stats & chips */
+.stats { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.stat {
+  flex: 1;
+  min-width: 130px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  text-align: center;
+  padding: 14px 8px;
+}
+.stat strong { display: block; font-size: 1.6rem; color: var(--brand); }
+.stat span { color: var(--muted); font-size: 0.85rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.chip {
+  background: var(--card);
+  border: 1px solid var(--brand);
+  color: var(--brand-dark);
+  border-radius: 20px;
+  padding: 5px 14px;
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+.chip:hover { background: var(--brand); color: #fff; }
+
+/* Filter form */
+.filter-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+.filter label { display: flex; flex-direction: column; font-size: 0.85rem; font-weight: 600; color: var(--muted); gap: 4px; }
+.filter input, .filter select {
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #fff;
+  width: 100%;
+}
+.filter-actions { margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+.result-count { color: var(--muted); }
+.empty { text-align: center; }
+
+/* Detail & reviews */
+.breadcrumb { margin-bottom: 10px; }
+.detail-list { padding-left: 20px; }
+.detail-list li { margin: 6px 0; }
+.alert {
+  background: var(--warn-bg);
+  border: 1px solid var(--warn-line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 12px;
+  font-size: 0.92rem;
+}
+.review { border-bottom: 1px dashed var(--line); padding: 10px 0; }
+.review:last-child { border-bottom: none; }
+.review-head { margin: 0 0 4px; }
+.mock-tag {
+  background: #eee;
+  color: var(--muted);
+  border-radius: 8px;
+  font-size: 0.7rem;
+  padding: 1px 7px;
+  vertical-align: middle;
+}
+.tips li { margin: 6px 0; }
+.mock-note, .mock-label { color: var(--muted); font-size: 0.85rem; font-style: italic; }
+.problem p { margin-top: 0; }
+.market-teaser { background: linear-gradient(135deg, #fff 60%, #f3ecff); }
+.notfound { text-align: center; padding: 32px 16px; }
+.notfound code { background: #f4ede1; padding: 2px 6px; border-radius: 6px; word-break: break-all; }
+.contact-block { border-left: 4px solid var(--brand); }
+
+/* Footer */
+.footer {
+  background: var(--night);
+  color: #cfcbe0;
+  text-align: center;
+  padding: 18px 16px;
+  margin-top: 28px;
+  font-size: 0.88rem;
+}
+.footer a { color: #ffd9a0; }
+.footer .mock-label { color: #a9a4c0; }
+
+/* Responsive: 375px */
+@media (max-width: 480px) {
+  h1 { font-size: 1.3rem; }
+  .navbar { padding: 8px 10px; }
+  .nav-links { gap: 4px 10px; }
+  .nav-links a { font-size: 0.85rem; }
+  .grid { grid-template-columns: 1fr; }
+  .hero { padding: 20px 14px; }
+  main { padding: 12px; }
+}

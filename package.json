@@ -1,0 +1,15 @@
+{
+  "name": "binhdinh-local-business",
+  "version": "1.0.0",
+  "description": "Cho dem & dac san Quy Nhon - directory 40 quan ngon re chinh goc - HTK 0396241674 - 2026",
+  "main": "api/index.js",
+  "scripts": {
+    "start": "node api/index.js"
+  },
+  "author": "HTK <htk.contact@gmail.com> (https://zalo.me/0396241674)",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
